@@ -3,6 +3,7 @@ const tarefas = [];
 
 function adicionarTarefa(id, desc) {
 
+
   let possui = tarefas.filter((el) => {
     return el.id === id;
   });
@@ -47,6 +48,11 @@ function imprimirLista() {
 function botaoAdicionar() {
   const seuId = parseInt(prompt("Adicione o ID da tarefa: "))
   const descricao = prompt("Descricao da tarefa: ")
+
+  if (isNaN(seuId)) {
+    alert("O ID precisa ser um numero")
+    return
+  }
 
   adicionarTarefa(seuId, descricao)
 }
